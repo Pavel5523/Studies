@@ -176,3 +176,10 @@
 
 # def display_info(name, age):
 #     print('Name', name, )
+
+# num = 13579
+# x = [int(a) for a in str(num)]
+# print(x)
+
+a=input()
+print(list(a))
