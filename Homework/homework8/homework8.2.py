@@ -4,4 +4,4 @@ lst = [randint(0, 20) for i in range(n)]
 print(lst)
 def count(a, b):
     for i in range(b):
-        
+
