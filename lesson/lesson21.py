@@ -278,24 +278,24 @@
 # print(f'Площадь прямоугольника: {Area.rect_area(2, 6)}')
 # print(Area.get_count())
 
-class Date:
-    def __init__(self, day, month, year):
-        self.day = day
-        self.month = month
-        self.year = year
-
-    @classmethod
-    def from_string(cls, string_date):
-        day, month, year = map(int, string_date.split('.'))
-        return cls(day, month, year)
-
-    def string_to_db(self):
-        return f'{self.day}-{self.month}-{self.year}'
-
-
-# string_date = '23.10.2022'
-# day, month, year = map(int, string_date.split('.'))
-date = Date.from_string('23.10.2022')
-print(date.string_to_db())
-date2 = Date.from_string('1.1.1')
-print(date2.string_to_db())
+# class Date:
+#     def __init__(self, day, month, year):
+#         self.day = day
+#         self.month = month
+#         self.year = year
+#
+#     @classmethod
+#     def from_string(cls, string_date):
+#         day, month, year = map(int, string_date.split('.'))
+#         return cls(day, month, year)
+#
+#     def string_to_db(self):
+#         return f'{self.day}-{self.month}-{self.year}'
+#
+#
+# # string_date = '23.10.2022'
+# # day, month, year = map(int, string_date.split('.'))
+# date = Date.from_string('23.10.2022')
+# print(date.string_to_db())
+# date2 = Date.from_string('1.1.1')
+# print(date2.string_to_db())
