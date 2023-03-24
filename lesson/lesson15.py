@@ -38,13 +38,13 @@
 # print(ord('A'))
 
 # from random import randint
-#
-# short = 7
-# long = 10
+
+# short = 1
+# long = 3
 # min_ASCII = 33
 # max_ASCII = 126
-#
-#
+
+
 # def random_password():
 #     rand_len = randint(short, long)
 #     res = ''
@@ -52,8 +52,8 @@
 #         rand_char = chr(randint(min_ASCII, max_ASCII))
 #         res += rand_char
 #     return res
-#
-#
+
+
 # print('Случайный пароль:', random_password())
 
 # Методы строк

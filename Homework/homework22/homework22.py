@@ -1,3 +1,6 @@
+import re
+
+
 class Account:
     rate_usd = 0.013
     rate_eur = 0.011
@@ -37,12 +40,17 @@ class Account:
         print(f'Текущий баланс {self.value} {Account.suffix}')
 
     def edit_owner(self, surname):
-        self.surname = surname
+        surname = ''.join(re.findall(r'^[a-zа-яё-]+$', surname, re.IGNORECASE))
+        if isinstance(surname, str) and surname:
+            self.surname = surname
+        else:
+            print('Фамилия может содержать только буквы и тире')
 
     def add_parcents(self):
-        self.value += self.value * self.percent
-        print('Проценты были начислены')
-        self.print_balance()
+        if self.value > 0:
+            self.value += self.value * self.percent
+            print('Проценты были начислены')
+            self.print_balance()
 
     def width_drow_many(self, val):
         if val > self.value:
@@ -54,9 +62,12 @@ class Account:
         self.print_balance()
 
     def add_maney(self, val):
-        self.value += val
-        print(f'{val} {Account.suffix} было успешно добавлено')
-        self.print_balance()
+        if isinstance(val, (float, int)):
+            self.value += val
+            print(f'{val} {Account.suffix} было успешно добавлено')
+            self.print_balance()
+        else:
+            print('Сумма должна быть числом')
 
     def print_info(self):
         print('Информация о счете')
