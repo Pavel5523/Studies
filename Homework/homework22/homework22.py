@@ -40,7 +40,7 @@ class Account:
         print(f'Текущий баланс {self.value} {Account.suffix}')
 
     def edit_owner(self, surname):
-        surname = ''.join(re.findall(r'^[a-zа-яё-]+$', surname, re.IGNORECASE))
+        surname = ''.join(re.findall(r'^[а-яё-]+$', surname, re.IGNORECASE))
         if isinstance(surname, str) and surname:
             self.surname = surname
         else:
@@ -53,11 +53,14 @@ class Account:
             self.print_balance()
 
     def width_drow_many(self, val):
-        if val > self.value:
-            print(f'У вас нет {val} {Account.suffix}')
+        if isinstance(val, (int, float)):
+            if val > self.value:
+                print(f'У вас нет {val} {Account.suffix}')
+            else:
+                self.value -= val
+                print(f'{val} {Account.suffix} было успешно снято')
         else:
-            self.value -= val
-            print(f'{val} {Account.suffix} было успешно снято')
+            print('Сумма должна быть числом')
 
         self.print_balance()
 
