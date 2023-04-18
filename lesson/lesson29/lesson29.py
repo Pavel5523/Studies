@@ -99,26 +99,26 @@
 
 # pip install requests
 
-import requests
-import json
-response = requests.get('https://jsonplaceholder.typicode.com/todos')
-print(type(response.text))
-todos = json.loads(response.text)
-# print(type(todos))
-# print(todos)
-
-todos_by_user = {}
-for todo in todos:
-    if todo['completed']:
-        try:
-            todos_by_user[todo['userId']] += 1
-        except KeyError:
-            todos_by_user[todo['userId']] = 1
-
-print(todos_by_user)
-
-top_users = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)
-print(top_users)
-
-max_complete = top_users[0][1]
-print(max_complete)
+# import requests
+# import json
+# response = requests.get('https://jsonplaceholder.typicode.com/todos')
+# print(type(response.text))
+# todos = json.loads(response.text)
+# # print(type(todos))
+# # print(todos)
+#
+# todos_by_user = {}
+# for todo in todos:
+#     if todo['completed']:
+#         try:
+#             todos_by_user[todo['userId']] += 1
+#         except KeyError:
+#             todos_by_user[todo['userId']] = 1
+#
+# print(todos_by_user)
+#
+# top_users = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)
+# print(top_users)
+#
+# max_complete = top_users[0][1]
+# print(max_complete)
