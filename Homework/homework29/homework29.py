@@ -24,7 +24,6 @@ class Countries:
         except KeyError:
             print('Нет такой страны в списке')
 
-
     @staticmethod
     def search_data(data_search):
         data = json.load(open('data.json'))
@@ -44,9 +43,12 @@ class Countries:
             print('файл изменен')
         else:
             print('Нет такой страны в списке')
+
     @staticmethod
     def show_data():
-        print(json.load(open('data.json')))
+        data = (json.load(open('data.json')))
+        for data_country, data_city in data.items():
+            print(f'Страна: {data_country}, Столица: {data_city}')
 
 
 while True:
