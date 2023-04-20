@@ -20,6 +20,7 @@ class Countries:
             data.pop(data_del)
             with open('data.json', 'w') as f:
                 json.dump(data, f)
+            print('файл удален')
         except KeyError:
             print('Нет такой страны в списке')
 
@@ -33,40 +34,51 @@ class Countries:
             print('Нет такой страны в списке')
 
     @staticmethod
-    def redaction_data(data_redaction, new_city):
+    def redaction_data(data_redaction):
         data = json.load(open('data.json'))
         if data_redaction in data.keys():
-        # data[data_redaction] = new_city
-        # with open('data.json', 'w') as f:
-        #     json.dump(data, f)
-        # except KeyError:
-        #     print('Нет такой страны в списке')
-        # print(data.keys())
+            new_city = input('Введите название новой столицы ')
+            data[data_redaction] = new_city.capitalize()
+            with open('data.json', 'w') as f:
+                json.dump(data, f)
+            print('файл изменен')
+        else:
+            print('Нет такой страны в списке')
     @staticmethod
     def show_data():
         print(json.load(open('data.json')))
 
 
 while True:
-    n = int(input('Введите режим '))
-    if n == 6:
-        break
-    if n == 1:
-        country = input('Введите название страны ')
-        city = input('Введите название столицы ')
-        countries = {
-            country.capitalize(): city.capitalize()
-        }
-        Countries.add_data(countries)
-    if n == 2:
-        data_del = input('Введите страну для удаления ')
-        Countries.del_data(data_del.capitalize())
-    if n == 3:
-        data_search = input('Введите страну для поиска ')
-        Countries.search_data(data_search.capitalize())
-    if n == 4:
-        data_redaction = input('Введите страну для редактирования ')
-        new_city = input('Введите название новой столицы ')
-        Countries.redaction_data(data_redaction.capitalize(), new_city.capitalize())
-    if n == 5:
-        Countries.show_data()
+    print('*' * 40)
+    print('''Выбор действия:\n1 - добавление данных
+2 - удаление данных
+3 - поиск данных
+4 - редактирование данных
+5 - просмотр данных
+6 - завершение работы''')
+    n = (input('Введите режим '))
+    if n.isdigit():
+        n = int(n)
+        if n == 6:
+            break
+        if n == 1:
+            country = input('Введите название страны ')
+            city = input('Введите название столицы ')
+            countries = {
+                country.capitalize(): city.capitalize()
+            }
+            Countries.add_data(countries)
+        if n == 2:
+            data_del = input('Введите страну для удаления ')
+            Countries.del_data(data_del.capitalize())
+        if n == 3:
+            data_search = input('Введите страну для поиска ')
+            Countries.search_data(data_search.capitalize())
+        if n == 4:
+            data_redaction = input('Введите страну для редактирования ')
+            Countries.redaction_data(data_redaction.capitalize())
+        if n == 5:
+            Countries.show_data()
+    else:
+        print('Вы ввели не число')
