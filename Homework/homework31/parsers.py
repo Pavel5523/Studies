@@ -12,16 +12,18 @@ class Parser:
 
     def get_html(self):
         req = requests.get(self.url).text
-        self.html = BeautifulSoup(req,'lxml')
+        self.html = BeautifulSoup(req, 'lxml')
 
     def parsing(self):
-        kit = self.html.find('a', class_='name')
+        kit = self.html.find_all('td', class_='d cell-name')
+        # print(kit)
         for i in kit:
-            print(i)
-
-    def run(self):
-        self.get_html()
-        self.parsing()
-
-# res = requests.get('https://www.danomsk.ru/shop/769-instrument/774-nabory/').text
-# print(res)
+            title = i.find('span').text
+            print(title)
+#
+#     def run(self):
+#         self.get_html()
+#         self.parsing()
+#
+# # res = requests.get('https://www.danomsk.ru/shop/769-instrument/774-nabory/').text
+# # print(res)
