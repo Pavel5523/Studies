@@ -15,11 +15,18 @@ class Parser:
         self.html = BeautifulSoup(req, 'lxml')
 
     def parsing(self):
-        kit = self.html.find_all('td', class_='d cell-name')
-        # print(kit)
+        kit = self.html.find_all('tr', class_='search-result-row highlight')
         for i in kit:
-            title = i.find('span').text
-            print(title)
+            title = i.find('a', class_='t').text
+            prise = i.find('td', class_='d tac cell-price').text
+            presense = i.find('td', class_='tac region_order_button_mini').text
+            # print(f'Название: {title} Наличие: {presense} Цена: {prise.strip()}')
+            self.res.append({
+                'Цена': prise,
+                'Наличие': presense,
+                'Название': title,
+            })
+            print(self.res)
 #
 #     def run(self):
 #         self.get_html()
