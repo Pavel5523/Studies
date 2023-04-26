@@ -18,15 +18,15 @@ class Parser:
         kit = self.html.find_all('tr', class_='search-result-row highlight')
         for i in kit:
             title = i.find('a', class_='t').text
-            prise = i.find('td', class_='d tac cell-price').text
+            prise = i.find('td', class_='d tac cell-price').text.strip()
+            prise = ''.join(prise.split())
             presense = i.find('td', class_='tac region_order_button_mini').text
-            # print(f'Название: {title} Наличие: {presense} Цена: {prise.strip()}')
             self.res.append({
+                'Название': title,
                 'Цена': prise,
                 'Наличие': presense,
-                'Название': title,
             })
-            print(self.res)
+        print(self.res)
 #
 #     def run(self):
 #         self.get_html()
