@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
 
 
 class Parser:
@@ -26,7 +27,15 @@ class Parser:
                 'Цена': prise,
                 'Наличие': presense,
             })
-        print(self.res)
+        print(len(self.res))
+
+    def save(self):
+        with open(self.path, 'w') as f:
+
+            for i in self.res:
+                # print(i)
+                writer = csv.writer(f)
+                writer.writerow((f[i]))
 #
 #     def run(self):
 #         self.get_html()
