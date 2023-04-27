@@ -16,26 +16,26 @@ class Parser:
         self.html = BeautifulSoup(req, 'lxml')
 
     def parsing(self):
-        kit = self.html.find_all('tr', class_='search-result-row highlight')
-        for i in kit:
+        laptop = self.html.find_all('tr', class_='search-result-row highlight')
+        for i in laptop:
             title = i.find('a', class_='t').text
             prise = i.find('td', class_='d tac cell-price').text.strip()
             prise = ''.join(prise.split())
             presense = i.find('td', class_='tac region_order_button_mini').text
             self.res.append({
-                'Название': title,
                 'Цена': prise,
                 'Наличие': presense,
+                'Название': title,
             })
-        print(len(self.res))
+        print(self.res)
 
     def save(self):
         with open(self.path, 'w') as f:
-
+            writer = csv.writer(f)
+            writer.writerow(('Цена', 'Наличие', 'Название'))
             for i in self.res:
-                # print(i)
-                writer = csv.writer(f)
-                writer.writerow((f[i]))
+                writer.writerow((i['Цена'], i['Наличие'], i['Название']))
+
 #
 #     def run(self):
 #         self.get_html()
