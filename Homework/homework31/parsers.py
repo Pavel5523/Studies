@@ -36,10 +36,7 @@ class Parser:
             for i in self.res:
                 writer.writerow((i['Цена'], i['Наличие'], i['Название']))
 
-#
-#     def run(self):
-#         self.get_html()
-#         self.parsing()
-#
-# # res = requests.get('https://www.danomsk.ru/shop/769-instrument/774-nabory/').text
-# # print(res)
+    def run(self):
+        self.get_html()
+        self.parsing()
+        self.save()
