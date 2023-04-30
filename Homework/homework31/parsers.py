@@ -37,6 +37,6 @@ class Parser:
                 writer.writerow((i['Цена'], i['Наличие'], i['Название']))
 
     def run(self):
-        self.get_html()
+        print(self.get_html())
         self.parsing()
         self.save()
