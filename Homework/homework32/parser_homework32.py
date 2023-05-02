@@ -16,17 +16,14 @@ class Parser:
         self.html = BeautifulSoup(req, 'lxml')
 
     def parsing(self):
-        elements = self.html.find_all('table', class_='table-t tb-tovr')
-        # print(elements)
-        k = 0
+        elements = self.html.find_all('div', class_='bx_content_section')
+        print(elements)
         for i in elements:
-            if k == 1:
-                break
-            print(i.text)
-            k += 1
-            # description = i.find('td').text
-            # print(title)
+            # print((i.text).split())
+            description = i.find('tr').text
+            prise = i.find('td').text
             # print(description)
+            # print(prise)
             # self.res.append({
             #     'Цена': prise,
             #     'Наличие': presense,
@@ -39,7 +36,7 @@ class Parser:
             writer = csv.writer(f)
             writer.writerow(('Цена', 'Наличие', 'Название'))
             for i in self.res:
-                writer.writerow((i['Цена'], i['Наличие'], i['Название']))
+                print((i['Цена'], i['Наличие'], i['Название']))
 
     def run(self):
         self.get_html()
