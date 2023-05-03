@@ -16,13 +16,14 @@ class Parser:
         self.html = BeautifulSoup(req, 'lxml')
 
     def parsing(self):
-        elements = self.html.find_all('div', class_='bx_content_section')
-        print(elements)
+        elements = self.html.find_all('div', class_='product-card__body')
+        # print(elements)
         for i in elements:
-            # print((i.text).split())
-            description = i.find('tr').text
-            prise = i.find('td').text
-            # print(description)
+            name = i.find('div', class_='product-card__model').text
+            prise = i.find('div', class_='product-card__price-new').text
+            nal = i.find('div', class_='product-card__instock').text.strip()
+            print(nal)
+            # print(name)
             # print(prise)
             # self.res.append({
             #     'Цена': prise,
@@ -44,5 +45,5 @@ class Parser:
         # self.save()
 
 #
-# res = requests.get('https://radec-m.ru/radiodetali/13772/')
+# res = requests.get('https://omsk.velostrana.ru/velozapchasti/kolesa//')
 # print(res)

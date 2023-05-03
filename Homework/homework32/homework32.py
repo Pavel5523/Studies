@@ -2,7 +2,7 @@ from parser_homework32 import Parser
 
 
 def main():
-    pars = Parser('https://radec-m.ru/radiodetali/13772/', 'laptop.csv')
+    pars = Parser('https://omsk.velostrana.ru/velozapchasti/kolesa/', 'laptop.csv')
     pars.run()
 
 
