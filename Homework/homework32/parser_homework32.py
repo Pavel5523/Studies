@@ -17,33 +17,24 @@ class Parser:
 
     def parsing(self):
         elements = self.html.find_all('div', class_='product-card__body')
-        # print(elements)
         for i in elements:
             name = i.find('div', class_='product-card__model').text
             prise = i.find('div', class_='product-card__price-new').text
             nal = i.find('div', class_='product-card__instock').text.strip()
-            print(nal)
-            # print(name)
-            # print(prise)
-            # self.res.append({
-            #     'Цена': prise,
-            #     'Наличие': presense,
-            #     'Название': title,
-            # })
-        # print(self.res)
+            self.res.append({
+                'Цена': prise[:-2],
+                'Наличие': nal,
+                'Название': name,
+            })
 
     def save(self):
         with open(self.path, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(('Цена', 'Наличие', 'Название'))
             for i in self.res:
-                print((i['Цена'], i['Наличие'], i['Название']))
+                writer.writerow((i['Цена'], i['Наличие'], i['Название']))
 
     def run(self):
         self.get_html()
         self.parsing()
-        # self.save()
-
-#
-# res = requests.get('https://omsk.velostrana.ru/velozapchasti/kolesa//')
-# print(res)
+        self.save()
