@@ -52,13 +52,48 @@
 # print('Сумма:', a + b + c)
 # print('Произведение:', a * b * c)
 # print('Среднее арифметическое:', (a + b + c) / 3)
-n = 4321
-a = n // 1000
-b = (n // 100) % 10
-c = (n // 10) % 10
-d = n % 10
-print(a)
-print(b)
-print(c)
-print(d)
-print(d, c, b, a, sep='')
+# n = 4321
+# a = n // 1000
+# b = (n // 100) % 10
+# c = (n // 10) % 10
+# d = n % 10
+# print(a)
+# print(b)
+# print(c)
+# print(d)
+# print(d, c, b, a, sep='')
+
+# from faker import Faker
+#
+# fake = Faker('ru_RU')
+# for i in range(10):
+#     print(fake.name(), fake.address())
+
+# res = 0
+# for i in range(2,6+1,2):
+#     res = res + i
+#     print(i)
+# print(res)
+
+# num = input('--> ')
+# len_num = len(num)
+# num = [1, 3, 5, 8]
+# res = ''
+# for i in range(len(num) - 1, -1, -1):
+#     print(num[i])
+#     res += i
+# print(res)
+
+num = input('--> ')
+len_num = len(num)
+res = ''
+for i in num:
+    len_num -= 1
+    if len_num > 0 and i != '0':
+        res += i + len_num * '0' + ' + '
+    if len_num == 0:
+        res += i + len_num * '0'
+
+print(res)
+
+
