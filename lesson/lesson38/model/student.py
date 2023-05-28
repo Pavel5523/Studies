@@ -1,5 +1,5 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
-from database import Base
+from model.database import Base
 
 
 class Student(Base):
@@ -22,5 +22,3 @@ class Student(Base):
     def __repr__(self):
         return f'Студент (ФИО: {self.surname} {self.name} {self.patronymic}, Возраст: {self.age},' \
                f' ID_группы: {self.group}'
-
-
