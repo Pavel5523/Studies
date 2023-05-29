@@ -86,7 +86,7 @@
 #     writer.writerow(['Саша', '5', '12'])
 #     writer.writerow(['Маша', '11', '18'])
 
-# data = [['hostname', 'vendor', 'model', 'location'],
+# data = [['hostname', 'vendor', 'models', 'location'],
 #         ['sw1', 'Cisco', '3750', 'London, Best str'],
 #         ['sw2', 'Cisco', '3850', 'Liverpool, Better str'],
 #         ['sw3', 'Cisco', '3650', 'Liverpool, Better str'],
@@ -109,22 +109,22 @@
 # data = [{
 #     'hostname': 'sw1',
 #     'location': 'London',
-#     'model': '3750',
+#     'models': '3750',
 #     'vendor': 'Cisco'
 # }, {
 #     'hostname': 'sw2',
 #     'location': 'Liverpool',
-#     'model': '3850',
+#     'models': '3850',
 #     'vendor': 'Cisco'
 # }, {
 #     'hostname': 'sw3',
 #     'location': 'Liverpool',
-#     'model': '3650',
+#     'models': '3650',
 #     'vendor': 'Cisco'
 # }, {
 #     'hostname': 'sw4',
 #     'location': 'London',
-#     'model': '3650',
+#     'models': '3650',
 #     'vendor': 'Cisco'
 # }]
 #

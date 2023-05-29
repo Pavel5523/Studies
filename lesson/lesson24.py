@@ -236,7 +236,7 @@
 #         def make(self):
 #             return 'intel'
 #
-#         def model(self):
+#         def models(self):
 #             return 'Core-i7'
 #
 # comp = Computer()
@@ -245,7 +245,7 @@
 # print(comp.name)
 # print(my_os.system())
 # print(my_cpu.make())
-# print(my_cpu.model())
+# print(my_cpu.models())
 
 
 # class Base:

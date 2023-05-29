@@ -60,14 +60,14 @@ from jinja2 import Template
 # print(msq)
 
 # cars = [
-#     {'model': 'Audi', 'price': 24000},
-#     {'model': 'Skoda', 'price': 23000},
-#     {'model': 'Renault', 'price': 22000},
-#     {'model': 'Wolksvagen', 'price': 21000}
+#     {'models': 'Audi', 'price': 24000},
+#     {'models': 'Skoda', 'price': 23000},
+#     {'models': 'Renault', 'price': 22000},
+#     {'models': 'Wolksvagen', 'price': 21000}
 # ]
 #
-# # tpl = '{{(cs | max(attribute="price")).model }}'
-# tpl = "{{cs | replace('model', 'brand') }}"
+# # tpl = '{{(cs | max(attribute="price")).models }}'
+# tpl = "{{cs | replace('models', 'brand') }}"
 # tm = Template(tpl)
 # msq = tm.render(cs=cars)
 # print(msq)

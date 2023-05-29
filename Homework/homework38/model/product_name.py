@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from Homework.homework38.model.database import Base
+from model.database import Base
 
 
 class Product_name(Base):
@@ -16,5 +16,3 @@ class Product_name(Base):
         self.product_name = product_name
         self.quantity = quantity
 
-    def __repr__(self):
-        return f'Название продукта: {self.product_name}, Количество продукта: {self.quantity}'

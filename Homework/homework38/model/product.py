@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Integer, ForeignKey
-from Homework.homework38.model.database import Base
+from model.database import Base
 
 
 class Product(Base):

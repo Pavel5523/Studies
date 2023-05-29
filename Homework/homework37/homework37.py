@@ -15,7 +15,7 @@ with sqlite3.connect('laptops.db') as con:
     cur.execute('''
     CREATE TABLE  IF NOT EXISTS laptops(
         laptop_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        model TEXT,
+        models TEXT,
         size TEXT,
         price INTEGER
     )
