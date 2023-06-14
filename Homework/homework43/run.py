@@ -5,7 +5,7 @@ from FDataBase import FDataBase
 
 DATABASE = '/tmp/flsk.db'
 DEBUG = True
-SECRET_KEY = 'dbaea81d62ca46416fe667572ce4d8f3c4fc4128'
+SECRET_KEY = '94aab7e44b1c3de445da94ba3ee42efeaac4ec46'
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.update(dict(DATABASE=os.path.join(app.root_path, 'flsk.db')))
@@ -31,12 +31,24 @@ def get_db():
     return g.link_db
 
 
-# @app.route('/index')
 @app.route('/')
 def index():
     db = get_db()
     dbase = FDataBase(db)
     return render_template('index.html', menu=dbase.get_menu())
+
+@app.route('add')
+def add_prod():
+    db = get_db()
+    dbase = FDataBase(db)
+    return render_template('add.html', menu=dbase.get_menu())
+
+
+@app.route('trash')
+def add_prod():
+    db = get_db()
+    dbase = FDataBase(db)
+    return render_template('trash.html', menu=dbase.get_menu())
 
 
 @app.teardown_appcontext
