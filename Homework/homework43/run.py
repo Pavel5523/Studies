@@ -31,20 +31,21 @@ def get_db():
     return g.link_db
 
 
-@app.route('/')
+@app.route('/', method=['POST', 'GET'])
 def index():
     db = get_db()
     dbase = FDataBase(db)
     return render_template('index.html', menu=dbase.get_menu())
 
-@app.route('add')
+
+@app.route('/add', method=['POST', 'GET'])
 def add_prod():
     db = get_db()
     dbase = FDataBase(db)
     return render_template('add.html', menu=dbase.get_menu())
 
 
-@app.route('trash')
+@app.route('/trash', method=['POST', 'GET'])
 def add_prod():
     db = get_db()
     dbase = FDataBase(db)
@@ -55,7 +56,6 @@ def add_prod():
 def close_db(error):
     if hasattr(g, 'link_db'):
         g.link_db.close()
-
 
 
 if __name__ == '__main__':
