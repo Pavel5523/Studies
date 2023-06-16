@@ -31,25 +31,25 @@ def get_db():
     return g.link_db
 
 
-@app.route('/', method=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def index():
     db = get_db()
     dbase = FDataBase(db)
     return render_template('index.html', menu=dbase.get_menu())
 
 
-@app.route('/add', method=['POST', 'GET'])
+@app.route('/info')
 def add_prod():
     db = get_db()
     dbase = FDataBase(db)
-    return render_template('add.html', menu=dbase.get_menu())
+    return render_template('info.html', menu=dbase.get_menu())
 
 
-@app.route('/trash', method=['POST', 'GET'])
-def add_prod():
-    db = get_db()
-    dbase = FDataBase(db)
-    return render_template('trash.html', menu=dbase.get_menu())
+# @app.route('/trash', methods=['POST', 'GET'])
+# def add_prod():
+#     db = get_db()
+#     dbase = FDataBase(db)
+#     return render_template('trash.html', menu=dbase.get_menu())
 
 
 @app.teardown_appcontext

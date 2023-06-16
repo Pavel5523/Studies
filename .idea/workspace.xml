@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32404c42-6d9b-4ce4-bde0-bb49da922978" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Studies.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/learn.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/homework43/flsk.db" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/homework43/flsk.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homework/homework43/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/homework43/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework/homework43/sq_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/homework43/sq_db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/homework43/templates/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/homework43/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/homework43/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/homework43/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/homework43/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/homework43/templates/tarsh.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
