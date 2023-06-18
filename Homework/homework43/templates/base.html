@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,17 +7,14 @@
 </head>
 <body>
     {%block menu%}
+<ul class="menu">
+    {%for i in menu%}
+    <li><a href="{{i.url}}">{{i.title}}</a></li>
+    {%endfor%}
 
+</ul>
     {%endblock%}
-    <div>Pricing</div>
     {%block content%}
-    <div class="block">
-    <form action="{{url_for('/')}}" method="post"></form>
-    <div class="content"><header class="head">Товар один</header><h2 class="price">4300</h2><div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus temporibus doloribus voluptatum quasi, voluptatibus vero ipsam modi? Est corporis non ipsa officiis vel exercitationem, eum mollitia quasi, tenetur amet totam!</div><div class="input_div"><input type="button" value="Купить"></div></div>
-    <div class="content"><header class="head">Товар два</header><h2 class="price">4500</h2><div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil amet, at est consectetur similique ipsam sint nemo rerum recusandae cumque maiores eveniet exercitationem sapiente deserunt quis perspiciatis? Quibusdam, aspernatur quae!</div><div class="input_div"><input type="button" value="Купить"></div></div>
-    <div class="content"><header class="head">Товар три</header><h2 class="price">5000</h2><div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta laborum, ut excepturi dolor sequi, nisi mollitia cum necessitatibus obcaecati nobis quod dignissimos, alias explicabo sunt repellat cumque. Repellat, amet similique.</div><div class="input_div"><input type="button" value="Купить"></button></div></div>
-    </form>
-    </div>
     {%endblock%}
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g
+from flask import Flask, render_template, g, request, session, redirect, flash
 import os
 import sqlite3
 from FDataBase import FDataBase
@@ -35,21 +35,27 @@ def get_db():
 def index():
     db = get_db()
     dbase = FDataBase(db)
-    return render_template('index.html', menu=dbase.get_menu())
+    if request.method == 'POST':
+        res = dbase.add_product(request.form['title'])
+        if not res:
+            flash('Ошибка добавления товара', category='error')
+        else:
+            flash('Товар добавлен в корзину', category='success')
+    return render_template('index.html', menu=dbase.get_menu(), title='Главная страница')
 
 
 @app.route('/info')
+def info_prod():
+    db = get_db()
+    dbase = FDataBase(db)
+    return render_template('info.html', menu=dbase.get_menu(), title='Информация о товаре')
+
+
+@app.route('/trash')
 def add_prod():
     db = get_db()
     dbase = FDataBase(db)
-    return render_template('info.html', menu=dbase.get_menu())
-
-
-# @app.route('/trash', methods=['POST', 'GET'])
-# def add_prod():
-#     db = get_db()
-#     dbase = FDataBase(db)
-#     return render_template('trash.html', menu=dbase.get_menu())
+    return render_template('trash.html', menu=dbase.get_menu(), title='Корзина')
 
 
 @app.teardown_appcontext

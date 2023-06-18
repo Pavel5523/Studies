@@ -3,17 +3,22 @@
 <html lang="en">
 <link rel="stylesheet" href="{%static 'css/style.css'%}">
 <head>
+    <link rel="icon" type='image/x-icon' href="{%static 'skills/favicon.ico'%}">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<div class="content">
+<div class="menu">
 
 
         <div class="wrap">
+            <div class="logo">
+                <a href="{%url 'index'%}"><img src="{%static 'skills/logo.png'%}" alt=""></a>
+            </div>
             <ul>
                 <li><a href="{%url 'index'%}">Главная</a></li>
                 <li><a href="{%url 'blogs'%}">Блог</a></li>
+                <li><a href="{%static 'skills/resume.pdf'%}" target="_blank">Резюме</a></li>
             </ul>
         </div>
 

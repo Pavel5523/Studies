@@ -2,39 +2,51 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color:beige;
 }
-.block{
+.content{
     display:flex;
     justify-content: space-between;
 }
-.content{
+.container{
     border: solid 1px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 15px;
-    max-width: 300px;
-    /* padding: 10px; */
+    max-width: 500px; 
 }
-.head{
-    background-color: aqua;
+.menu{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background: aqua;
+    margin-top: 0;
+    padding: 20px;
+}
+h1{
     text-align: center;
-    border-radius: 15px;
-    height: 30px;
+    font-size: 40px;
+    color: blue;
 }
-input{
-    background: rgb(129, 129, 238);
-    width: 200px;
-    margin-bottom: 10px;
-    border-radius: 50px;
-    height: 40px;
-    font-size: 20px;
+.name{
+    background-color: aqua;
+    margin-top: 0;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
 }
 .price{
     text-align: center;
 }
-button{
+input{
     width: 200px;
+    height: 50px;
+    background-color: chartreuse;
 }
-.input_div{
+.input{
     text-align: center;
-    margin-top: 20px;
 }
+.block_info{
+    border: groove;
+    margin-top: 15px;
+}
+.text{
+    display: none;
+} 
