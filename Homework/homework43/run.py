@@ -51,11 +51,50 @@ def info_prod():
     return render_template('info.html', menu=dbase.get_menu(), title='Информация о товаре')
 
 
-@app.route('/trash')
-def add_prod():
+@app.route('/first_prod', methods=['POST', 'GET'])
+def first_prod():
     db = get_db()
     dbase = FDataBase(db)
-    return render_template('trash.html', menu=dbase.get_menu(), title='Корзина')
+    if request.method == 'POST':
+        res = dbase.add_product(request.form['title'])
+        if not res:
+            flash('Ошибка добавления товара', category='error')
+        else:
+            flash('Товар добавлен в корзину', category='success')
+    return render_template('first_prod.html', menu=dbase.get_menu(), title='Первый товар')
+
+
+@app.route('/second_prod', methods=['POST', 'GET'])
+def second_prod():
+    db = get_db()
+    dbase = FDataBase(db)
+    if request.method == 'POST':
+        res = dbase.add_product(request.form['title'])
+        if not res:
+            flash('Ошибка добавления товара', category='error')
+        else:
+            flash('Товар добавлен в корзину', category='success')
+    return render_template('second_prod.html', menu=dbase.get_menu(), title='Второй товар')
+
+
+@app.route('/third_prod', methods=['POST', 'GET'])
+def third_prod():
+    db = get_db()
+    dbase = FDataBase(db)
+    if request.method == 'POST':
+        res = dbase.add_product(request.form['title'])
+        if not res:
+            flash('Ошибка добавления товара', category='error')
+        else:
+            flash('Товар добавлен в корзину', category='success')
+    return render_template('third_prod.html', menu=dbase.get_menu(), title='Третий товар')
+
+
+@app.route('/trash')
+def trash():
+    db = get_db()
+    dbase = FDataBase(db)
+    return render_template('trash.html', menu=dbase.get_menu(), prod=dbase.get_prod())
 
 
 @app.teardown_appcontext

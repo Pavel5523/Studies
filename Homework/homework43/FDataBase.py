@@ -19,9 +19,19 @@ class FDataBase:
 
     def add_product(self, title):
         try:
-            self.__cur.execute('INSERT INTO products VALUES(NULL, ?)', title)
+            self.__cur.execute('INSERT INTO products VALUES(NULL, ?)', (title,))
             self.__db.commit()
         except sqlite3.Error:
             print('Ошибка добавления товара в корзину')
             return False
         return True
+
+    def get_prod(self):
+        try:
+            self.__cur.execute("SELECT * FROM products")
+            res = self.__cur.fetchall()
+            if res:
+                return res
+        except sqlite3.Error as e:
+            print("Ошибка получения товара из БД " + str(e))
+        return []

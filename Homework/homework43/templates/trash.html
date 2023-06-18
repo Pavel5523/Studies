@@ -1,3 +1,8 @@
 {%extends 'base.html'%}
 {%block content%}
+<ul>
+    {%for i in prod%}
+        <li>{{i.title}}</li>
+    {%endfor%}
+</ul>
 {%endblock%}

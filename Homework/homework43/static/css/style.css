@@ -49,4 +49,15 @@ input{
 }
 .text{
     display: none;
-} 
+}
+.success{
+    border: 1px solid #21Db56;
+    background: #AEFFC5;
+}
+.error{
+    border: 1px solid #FF4343;
+    background: #FF9C9C;
+}
+.flash{
+    padding: 10px;
+}
