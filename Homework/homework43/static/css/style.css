@@ -35,14 +35,6 @@ h1{
 .price{
     text-align: center;
 }
-input{
-    width: 200px;
-    height: 50px;
-    background-color: chartreuse;
-}
-.input{
-    text-align: center;
-}
 .block_info{
     border: groove;
     margin-top: 15px;
@@ -60,4 +52,54 @@ input{
 }
 .flash{
     padding: 10px;
+}
+.pay{
+    text-align: center;
+}
+.sub{
+    height: 40px;
+    width: 300px;
+    font-size: 18px;
+    background: #36e968;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+.item{
+    display: none;
+}
+.pay_link{
+    height: 40px;
+    text-align: center;
+    background: #36e968;
+    font-size: 28px;
+    border-radius: 15px;
+}
+.lin{
+    color: #050500;
+    text-decoration: none;
+}
+.container_pay{
+    background: #f0cdf5;
+}
+.name_pay{
+    background-color: aqua;
+    margin-top: 0;
+    text-align: center;
+}
+li{
+    list-style-type: none;
+}
+.trash{
+    font-size: 28px;
+    text-align: center;
+    background: #AEFFC5;
+}
+button{
+    background: #f0cdf5;
+    font-size: 30px;
+    border-radius: 15px;
+    width: 400px;
+}
+.trash_pay{
+    text-align: center;
 }

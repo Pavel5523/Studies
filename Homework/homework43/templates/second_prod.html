@@ -4,12 +4,12 @@
   <div class="flash {{ cat }}">{{ msg }}</div>
 {% endfor %}
 <form action="{{ url_for('second_prod') }}" method="post">
-<div class="container">
-        <h2 class="name">Второй товар</h2>
+<div class="container_pay">
+        <h2 class="name_pay">Второй товар</h2>
         <h2 class="price">42800</h2>
         <div class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores voluptatum eius nesciunt impedit totam corrupti animi quisquam modi explicabo. Hic quis est illo, consequuntur quos quas officia ratione corrupti maiores!</div>
-        <input type="text" name="title" value="Второй товар">
-        <div class="input"><input type="submit" value="Купить"></div>
+        <input class="item" type="text" name="title" value="Второй товар">
+        <div class="pay"><input class="sub" type="submit" value="Купить"></div>
     </div>
 </form>
 {%endblock%}

@@ -90,10 +90,12 @@ def third_prod():
     return render_template('third_prod.html', menu=dbase.get_menu(), title='Третий товар')
 
 
-@app.route('/trash')
+@app.route('/trash', methods=['POST', 'GET'])
 def trash():
     db = get_db()
     dbase = FDataBase(db)
+    if request.method == 'POST':
+        dbase.del_prod()
     return render_template('trash.html', menu=dbase.get_menu(), prod=dbase.get_prod())
 
 
