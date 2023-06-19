@@ -36,7 +36,3 @@ class FDataBase:
             print("Ошибка получения товара из БД " + str(e))
         return []
 
-    def del_prod(self):
-        self.__cur.execute('DELETE FROM products')
-        self.__db.commit()
-        return 
