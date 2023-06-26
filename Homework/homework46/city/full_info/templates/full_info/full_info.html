@@ -1,5 +1,12 @@
 {%extends 'info/base.html'%}
 {%load static%}
 {%block content%}
-<h1>Info</h1>
+{%for blog in full_info%}
+<div class="element">
+    <h2 class="top"><a href="{%url 'detail' blog.id%}">{{blog.title}}</a></h2>
+    <div class="blog_text">
+        <p>{{blog.description|truncatechars:300}}</p>
+    </div>
+</div>
+{%endfor%}
 {%endblock%}
