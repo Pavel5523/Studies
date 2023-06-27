@@ -1,0 +1,39 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: lightblue;
+}
+h2{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: purple;
+}
+.img{
+    text-align: center;
+}
+.place{
+    text-align: center;
+}
+.element{
+    background: lightyellow;
+}
+.top{
+    background: aquamarine;
+}
+.detail{
+    background: lightyellow;
+}
+.detail h1{
+    background: rgb(101, 44, 112);
+    color: aliceblue;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}

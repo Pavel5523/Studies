@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="content">
+    <div class="wrap">
+        <ul>
+            <li><a href="{%url 'index'%}">Главная</a></li>
+            <li><a href="{%url 'full_info'%}">Больше информации</a></li>
+        </ul>
+    </div>
+</div>
+    <div class="content">
+        <div class="wrap">
+            {%block content%}
+            {%endblock%}
+        </div>
+    </div>
+</body>
+</html>
