@@ -1,0 +1,10 @@
+{%extends 'info/base.html'%}
+{%load static%}
+{%block content%}
+<h4>{{error}}</h4>
+<form action="" method="post" class="register">
+    {%csrf_token%}
+{{form.as_p}}
+    <button type="submit" class="btn">Зарегестрироваться</button>
+</form>
+{%endblock%}

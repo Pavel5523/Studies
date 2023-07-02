@@ -1,6 +1,16 @@
 {%extends 'info/base.html'%}
 {%load static%}
 {%block content%}
+<!--<div class="content">-->
+<!--    <div class="wrap">-->
+<!--        <ul class="menu">-->
+<!--            <li><a href="{%url 'index'%}">Главная</a></li>-->
+<!--            <li><a href="{%url 'full_info'%}">Больше информации</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+    <div class="content">
+        <div class="wrap">
 <h1>Город Омск</h1>
 <div class="img">
     <img src="{%static 'city/Omsk.jpg'%}" alt="">
@@ -16,5 +26,4 @@
     </div>
 
     {%endfor%}
-</div>
 {%endblock%}
