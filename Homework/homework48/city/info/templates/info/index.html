@@ -1,0 +1,23 @@
+{%extends 'info/base.html'%}
+{%load static%}
+{%block content%}
+    <div class="content">
+        <div class="wrap">
+<h1>Город Омск</h1>
+<div class="img">
+    <img src="{%static 'city/Omsk.jpg'%}" alt="">
+</div>
+<h1>Достопримечательности</h1>
+<div class="block">
+    {%for project in projects%}
+    <div class="element">
+        <div class="text"><h2><a href="{{project.url}}" target="_blank">{{project.title}}</a></h2></div>
+        <div class="place"><img src="{{project.image.url}}" alt=""></div>
+        <p>{{project.description}}</p>
+        <hr><br>
+    </div>
+    {%endfor%}
+    <form action="{%url 'next_page'%}" method="post">
+                    {%csrf_token%}
+                    <button class="next">>>></button></form>
+{%endblock%}

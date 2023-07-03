@@ -1,0 +1,15 @@
+{%extends 'info/base.html'%}
+{%load static%}
+{%block content%}
+<h1>Следующая страница</h1>
+<div class="next_back">
+<form action="{%url 'next_page2'%}" method="post">
+    {%csrf_token%}
+    <button class="next">>>></button>
+</form>
+<form action="{%url 'index'%}" method="post">
+    {%csrf_token%}
+    <button class="back"><<<</button>
+</form>
+    </div>
+{%endblock%}

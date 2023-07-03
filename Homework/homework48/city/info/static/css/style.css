@@ -1,0 +1,82 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: lightblue;
+}
+h2{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: purple;
+}
+.img{
+    text-align: center;
+}
+.place{
+    text-align: center;
+}
+.element{
+    background: lightyellow;
+}
+.top{
+    background: aquamarine;
+}
+.detail{
+    background: lightyellow;
+}
+.detail h1{
+    background: rgb(101, 44, 112);
+    color: aliceblue;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    color: purple;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: 20px;
+}
+h4{
+    color: red;
+}
+.btn{
+    background: #003366;
+    color: #fff;
+}
+button{
+    border-radius: 6px;
+    box-shadow: inset 0 0 6px 2px #fff;
+    padding: 10px 40px;
+    margin-top: 40px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.center{
+    text-align: center;
+}
+input{
+    width: 100%;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+.bg{
+    box-shadow: 0 2px 12px 2px #003366;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+.next_back{
+    display: flex;
+    justify-content: space-around;
+}
+.next{
+    background: green;
+}
+.back{
+    background: green;
+}

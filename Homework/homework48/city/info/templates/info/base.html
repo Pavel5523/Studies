@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="menu">
+    <div class="wrap">
+        <ul class="menu">
+            {%if user.is_authenticated%}
+            <li class="logo">Пользователь: {{user.username}}</li>
+            <li>
+                <a href="{%url 'logoutuser'%}">&nbsp&nbspВыйти</a>
+            </li>
+            {%else%}
+            <li><a href="{% url 'signupuser'%}">Зарегестрироваться&nbsp</a></li>
+            <li><a href="{%url 'loginuser'%}">&nbspВойти</a></li>
+            {%endif%}
+            {%if user.is_authenticated%}
+            <div class="content">
+    <div class="wrap">
+        <ul class="menu">
+            <li><a href="{%url 'index'%}">Главная&nbsp&nbsp&nbsp</a></li>
+            <li><a href="{%url 'full_info'%}">&nbsp&nbsp&nbspБольше информации</a></li>
+<!--            <li>-->
+<!--                <form action="{%url 'next_page'%}" method="post">-->
+<!--                    {%csrf_token%}-->
+<!--                    <button class="next">>>></button></form></li>-->
+        </ul>
+    </div>
+</div>
+            {%endif%}
+        </ul>
+    </div>
+</div>
+            {%block content%}
+            {%endblock%}
+</body>
+</html>
