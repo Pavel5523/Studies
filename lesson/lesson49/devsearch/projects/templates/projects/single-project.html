@@ -8,40 +8,44 @@
         <div class="column column--1of3">
           <h3 class="singleProject__subtitle">Tools & Stacks</h3>
           <div class="singleProject__toolStack">
+            {% for tag in project.tags.all %}
             <span class="tag tag--pill tag--sub tag--lg">
-              <small>Figma</small>
+              <small>{{tag}}</small>
             </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>React Js</small>
-            </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>REST API</small>
-            </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>GraphQL</small>
-            </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>TypeScript</small>
-            </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>Webpack</small>
-            </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>NextJS</small>
-            </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>Postgres</small>
-            </span>
-            <span class="tag tag--pill tag--sub tag--lg">
-              <small>MongoDB</small>
-            </span>
+            {%endfor%}
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>React Js</small>-->
+<!--            </span>-->
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>REST API</small>-->
+<!--            </span>-->
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>GraphQL</small>-->
+<!--            </span>-->
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>TypeScript</small>-->
+<!--            </span>-->
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>Webpack</small>-->
+<!--            </span>-->
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>NextJS</small>-->
+<!--            </span>-->
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>Postgres</small>-->
+<!--            </span>-->
+<!--            <span class="tag tag&#45;&#45;pill tag&#45;&#45;sub tag&#45;&#45;lg">-->
+<!--              <small>MongoDB</small>-->
+<!--            </span>-->
           </div>
-          <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>Source Code
+          {%if project.source_link%}
+          <a class="singleProject__liveLink" href="{{project.source_link}}" target="_blank"><i class="im im-external-link"></i>Source Code
           </a>
+          {%endif%}
         </div>
         <div class="column column--2of3">
           <img class="singleProject__preview" src="{{project.featured_image.url}}" alt="portfolio thumbnail" />
-          <a href="profile.html" class="singleProject__developer">Md. Shahriar Parvez</a>
+          <a href="profile.html" class="singleProject__developer">{{project.owner.name}}</a>
           <h2 class="singleProject__title">{{project.title}}</h2>
           <h3 class="singleProject__subtitle">About the Project</h3>
           <div class="singleProject__info">
